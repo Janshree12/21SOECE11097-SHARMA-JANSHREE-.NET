@@ -1,0 +1,187 @@
+﻿model Online_Exam.Models.Groups
+@{
+    ViewData["Title"] = "NewGroupLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="register.css">
+    <style>
+        container{
+            background: #286575:
+        }
+
+        .register-form {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+            width: 300px;
+            border-color: #286575;
+            border: 1px solid #286575;
+            max-width: 700px;
+            margin: auto;
+            background: #EBF8FC;
+            margin-top: 20px; /* Add top margin as needed */
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 5px;
+            background-color: #286575;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #EBF8FC;
+            }
+
+            button:focus {
+                outline: none;
+            }
+    </style>
+</head>
+
+<div class="container" style="padding-top:80px">
+    <div class="register-form">
+        <h2>New Group</h2>
+        <form asp-action="NewGroupLogin">
+            <div class="form-group">
+                <label style="padding-top:10px">Name*</label>
+                <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+                <label>Description*</label>
+                <input type="text" id="description" name="Description" required />
+            </div>
+            
+            <button type="submit">Register</button>
+           
+        </form>
+        @if (TempData["msg"] != null)
+        {
+            <script>
+                alert('@TempData["msg"].ToString();');
+                window.location.href = "@Url.Action("Index", "Admin")";
+            </script>
+        }
+    </div>
+</div>
+
+</html>
+
+<!-- Login Page
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <style>
+        
+
+        .card {
+            background-color: #EBF8FC;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            border-color: #286575;
+            border: 1.5px solid #286575;
+        }
+
+        h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #286575;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #EBF8FC;
+            }
+
+            button:focus {
+                outline: none;
+            }
+
+        </style>
+    </head>
+<body class='body1'>
+    
+    <div class="card">
+        <h3>Login</h3>
+        <form>
+            <div class="input-container">
+                <label>Username</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div class="input-container">
+                <label>Password</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
+-->

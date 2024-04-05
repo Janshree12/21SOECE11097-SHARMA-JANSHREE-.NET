@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "NewExam";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">   
+    <br/>
+    <style>
+        .textbox {
+            width: 300px;
+            padding-bottom: 10px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .container {
+            padding-left: 25px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="card" style="width:67rem ; background-color:#EBF8FC ; height:670px ">
+        <h1 class="card-title" style="padding:25px ; color:#286575 ; font-weight:bold">New Exam</h1>
+        <div class="row">
+            <form asp-action="NewExam">
+
+                <label for="exam name"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Exam Name</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="text" name="exam name" id="exam name" required>
+
+                </div>
+                <br>
+
+                <label for="desc"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Description</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="text" name="desc" id="desc" required>
+
+                </div>
+                <br>
+                <label for="date"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Date</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="date" style="padding-left:25px;" name="date" id="date" required>
+                </div>
+                <br>
+                <label for="time"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Time</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="text" name="time" id="time" required>
+                </div>
+                <br>
+                <label for="grp"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Group</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="text" name="grp" id="grp" required>
+                </div>
+                <br>
+                <div class="row" style="padding-left:25px">
+
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="NewGroupLogin"> 
+                        <button style="border:none ;border-radius:14px ; color:#ffffff;width:120px ;font-size:larger ; font-weight:650 ;background-color:#286575 ">  Create  </button>
+                    </a>
+
+                    <a href="#" style=" color: #286575; font-weight: bolder;">Back To List</a>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

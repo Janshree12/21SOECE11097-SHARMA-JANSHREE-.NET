@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewData["Title"] = "QueAns";
+}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <br>
+    <style>
+        .textbox {
+            width: 300px;
+            padding-bottom: 10px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .container {
+            padding-left: 25px;
+        }
+    </style>
+
+    <div class="card" style="width:67rem ; background-color:#EBF8FC ; height:800px ">
+        <h1 class="card-title" style="padding:25px ; color:#286575 ; font-weight:bold">Question N Answer </h1>
+        <div class="row">
+            <form>
+
+                <label for="exam name"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Select Exam</h5></label>
+                <div class=" container">
+                    <select class="textbox" type="dropbox" select name="exam" id="select exam"
+                            name="exam name" required>
+
+                        <option value=""></option>
+                        <option value="maths">Maths</option>
+                        <option value="science">Science</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="english">English</option>
+
+                    </select>
+                </div>
+                <br>
+
+                <label for="ques"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Question</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="text" name="ques" id="ques" required>
+                </div>
+                <br>
+                <label for="op1"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Option1</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="text" style="padding-left:25px;" name="op1" id="op1" required>
+                </div>
+                <br>
+                <label for="op2"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Option2</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="text" style="padding-left:25px;" name="op2" id="op2" required>
+                </div>
+                <br>
+                <label for="op3"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Option3</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="text" style="padding-left:25px;" name="op3" id="op3" required>
+                </div>
+                <br>
+                <label for="op4"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Option4</h5></label>
+                <div class=" container">
+                    <input class="textbox" type="text" style="padding-left:25px;" name="op4" id="op4" required>
+                </div>
+                <br>
+                <label for="ans"> <h5 class="card-title" style="padding-left:25px ; color:#286575 ; font-weight:bold">Answer</h5></label>
+                <div class=" container">
+                    <select class="textbox" type="dropbox" select name="ans" id="ans"
+                            name="ans" required>
+
+                        <option value=""></option>
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        <option value="d">D</option>
+
+                    </select>
+                </div>
+                <br>
+                <div class="row">
+
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Teacher" asp-action="QuesAns"> 
+                    <button style="border:none ;border-radius:14px ; color:#ffffff;width:120px ;font-size:larger ; font-weight:650 ;background-color:#286575 ">  Create  </button></a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Online_Exam</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Online_Exam.styles.css" asp-append-version="true" />
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color:#286575">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color:#ffffff"><img src="~/Images/logo.png" height="50px"><b>EduQuest</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:#ffffff" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:#ffffff" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:#ffffff" asp-area="" asp-controller="Student" asp-action="Index">Student</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:#ffffff" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a>
+                        </li>
+                    </ul>
+
+                    <div class="dropdown" >
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false" style="color:#ffffff ; border-color:#ffffff ">
+                            Login
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
+                            <li><a class="nav-link" style="color:#286575" asp-area="" asp-controller="Admin" asp-action="AdminLogin" >Admin</a></li>
+                            <li><a class="nav-link" style="color:#286575" asp-area="" asp-controller="Teacher" asp-action="TeacherLogin" >Teacher</a></li>
+                            <li><a class="nav-link" style="color:#286575" asp-area="" asp-controller="Student" asp-action="StudentLogin" >Student</a></li>
+                            <!--
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">...</a></li>-->
+                        </ul>
+                    </div>
+                    
+                    <nav class="navbar bg-body-tertiary">
+                        <form class="container-fluid justify-content-start">
+                            <a class="nav-link" style="color:#286575" asp-area="" asp-controller="Admin" asp-action="Register">
+                                <button class="btn " type="button" style="border-color:#ffffff ;color:#ffffff;">Register</button>
+                            </a>
+                        </form>
+                    </nav>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

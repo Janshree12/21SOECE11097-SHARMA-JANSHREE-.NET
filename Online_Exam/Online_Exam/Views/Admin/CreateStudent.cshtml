@@ -1,0 +1,116 @@
+﻿@model Online_Exam.Models.Students
+
+@{
+    ViewData["Title"] = "CreateStudent";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="register.css">
+    <style>
+
+
+        .register-form {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+            width: 300px;
+            border-color: #286575;
+            border: 2px solid #286575;
+            max-width: 700px;
+            margin: auto;
+            background: #EBF8FC;
+            margin-top: 20px; /* Add top margin as needed */
+        }
+
+        h2 {
+            text-align: center;
+            color: #286575;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #286575;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #EBF8FC;
+            }
+
+            button:focus {
+                outline: none;
+            }
+    </style>
+</head>
+
+
+<div class="register-form">
+    <h2>Student</h2>
+    <form asp-action="CreateStudent">
+
+        <div class="form-group">
+            <label>Name</label>
+            <input class="textbox" type="text" name="name" id="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Username</label>
+            <input class="textbox" type="text" name="username" id="username" required>
+        </div>
+
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+            <label>Role</label>
+            <input class="textbox" type="text" name="role" id="role" required>
+        </div>
+
+        <button type="submit">Register</button>
+        <br>
+        <a href="#" style=" color: #286575; font-weight: bolder;">Back To List</a>
+    </form>
+    @if (TempData["msg"] != null)
+    {
+        <script>
+            alert('@TempData["msg"].ToString();');
+            window.location.href = "@Url.Action("Students", "Admin")";
+        </script>
+    }
+</div>
+
+
+</html>
+
+
